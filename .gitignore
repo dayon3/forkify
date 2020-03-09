@@ -3,6 +3,9 @@
 # Created by https://www.gitignore.io/api/visualstudiocode,linux,node
 # Edit at https://www.gitignore.io/?templates=visualstudiocode,linux,node
 
+# DS_Store
+.DS_Store
+
 ### Linux ###
 *~
 
