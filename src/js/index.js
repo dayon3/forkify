@@ -1,8 +1,18 @@
-// Global app controller
-import num from './test';
+import axios from 'axios';
 
-const x = 23;
+async function getResults(query) {
+	const key = 'd5f0dbcef7914b76b5454c29d273e4a3';
+	try {
+		const res = await axios(
+			`https://api.spoonacular.com/recipes/search?apiKey=${key}&query=${query}`
+		);
+		const recipes = res.data.results;
+		console.log(recipes);
+	} catch (error) {
+		alert(error);
+	}
+}
+getResults('tomato pasta');
 
-console.log(
-	`I imported ${num} from another module called test.js. Variable x is ${x}`
-);
+// d5f0dbcef7914b76b5454c29d273e4a3
+// https://api.spoonacular.com/recipes/search
