@@ -18,5 +18,3 @@ export default class Search {
 		}
 	}
 }
-// d5f0dbcef7914b76b5454c29d273e4a3
-// https://api.spoonacular.com/recipes/search
