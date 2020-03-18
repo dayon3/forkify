@@ -43,7 +43,7 @@ const renderRecipe = recipe => {
         <figure class="results__fig">
           <img src="https://spoonacular.com/recipeImages/${
 						recipe.id
-					}-312x231.jpg" alt="Test">
+					}-312x231.jpg" alt="${recipe.title}">
         </figure>
         <div class="results__data">
           <h4 class="results__name">${limitRecipeTitle(recipe.title)}</h4>
