@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { key } from '../config';
 
 export default class Search {
 	constructor(query) {
@@ -6,7 +7,6 @@ export default class Search {
 	}
 
 	async getResults() {
-		const key = 'd5f0dbcef7914b76b5454c29d273e4a3';
 		const number = 30;
 		try {
 			const res = await axios(

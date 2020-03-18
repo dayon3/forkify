@@ -43,6 +43,7 @@ body::-webkit-scrollbar-track {
 /* change thumb background */
 body::-webkit-scrollbar-thumb {
 	background: #fbdb89;
+	border-radius: 1rem;
 }
 
 .container {

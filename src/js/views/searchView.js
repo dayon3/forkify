@@ -39,7 +39,7 @@ const limitRecipeTitle = (title, limit = 17) => {
 const renderRecipe = recipe => {
 	const markup = `
     <li>
-      <a class="results__link" href="${recipe.id}">
+      <a class="results__link" href="#${recipe.id}">
         <figure class="results__fig">
           <img src="https://spoonacular.com/recipeImages/${
 						recipe.id
