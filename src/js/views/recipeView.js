@@ -34,7 +34,7 @@ const createIngredient = ingredient => `
     </svg>
     <div class="recipe__count">${formatCount(ingredient.amount)}</div>
     <div class="recipe__ingredient">
-    <span class="recipe__unit">${ingredient.unit}</span>
+    <span class="recipe__unit">${ingredient.measures.us.unitShort.toLowerCase()}</span>
       ${ingredient.name}
     </div>
   </li>
