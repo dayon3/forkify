@@ -583,6 +583,7 @@ body::-webkit-scrollbar-thumb,
 .shopping__count {
 	flex: 0 0 7.5rem;
 	padding: 0.4rem 0.5rem;
+	background-color: #f9f5f3;
 	border: 1px solid #f2efee;
 	border-radius: 3px;
 	margin-right: 2rem;

@@ -15,7 +15,6 @@ import { elements, renderLoader, clearLoader } from './views/base';
  * - Liked recipes
  */
 const state = {};
-window.state = state;
 
 /**
  * SEARCH CONTROLLER
@@ -67,7 +66,6 @@ elements.searchResPages.addEventListener('click', event => {
 const controlRecipe = async () => {
 	// Get ID from URL
 	const id = window.location.hash.replace('#', '');
-	console.log(id);
 
 	if (id) {
 		// Prepare UI for changes
@@ -90,7 +88,7 @@ const controlRecipe = async () => {
 
 			// Render recipe
 			clearLoader();
-			recipeView.renderRecipe(state.recipe);
+			recipeView.renderRecipe(state.recipe, state.likes.isLiked(id));
 		} catch (error) {
 			alert('Error rendering recipe!');
 		}
@@ -175,8 +173,22 @@ const controlLike = () => {
 		// Remove like from the UI list
 		likesView.deleteLike(currentID);
 	}
-	likesView.toggleLikeMenu(state.likes.getNumLikes);
+	likesView.toggleLikeMenu(state.likes.getNumLikes());
 };
+
+// Restore liked recipes on page load
+window.addEventListener('load', () => {
+	state.likes = new Likes();
+
+	// Restore likes
+	state.likes.readStorage();
+
+	// Toggle like menu button
+	likesView.toggleLikeMenu(state.likes.getNumLikes());
+
+	// Render the existing likes
+	state.likes.likes.forEach(like => likesView.renderLike(like));
+});
 
 // Handling recipe button clicks
 elements.recipe.addEventListener('click', event => {
@@ -198,5 +210,3 @@ elements.recipe.addEventListener('click', event => {
 		controlLike();
 	}
 });
-
-window.l = new List();
