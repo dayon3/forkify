@@ -21,7 +21,6 @@ export default class List {
 		// [2,4,8] splice(1, 2) -> return [4, 8], original array is [2] -> Mutates original array
 		// [2,4,8] slice(1, 2) -> return 4, original array is [2,4,8]
 		this.items.splice(index, 1);
-		this.items.slice(index, 1);
 	}
 
 	updateCount(id, newCount) {
